@@ -1,0 +1,13 @@
+<%= render "shared/header" %>
+
+<div class="input-form-main">
+  <div class="input-form-container">
+    <p class="input-title">画像を選択する</p>
+    <%= form_with(model: @post, local: true, class:"input-form") do |f| %>
+      <label class="input-form-label">
+        <span class="image-btn">画像を選択</span><%= f.file_field :image, class:"image-slect" %>
+        <%= f.submit "送信", class:"submit-btn"%>
+      </label>
+    <% end %>
+  </div>
+</div>
