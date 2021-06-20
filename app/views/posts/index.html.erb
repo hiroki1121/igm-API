@@ -1,0 +1,14 @@
+<%= render "shared/header" %>
+
+<div class="form-main">
+  <div class="index-lists">
+    <% @posts.each do |post| %>
+        <%= link_to "#" do %>
+          <div class="index-list">
+            <p class="image-num">No.<%= post.id %></p>
+            <%= image_tag post.image, class:"index-image" %>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>

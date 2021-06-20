@@ -1,6 +1,7 @@
 /* posts#new */
 .form-main {
-  height: 50vw;
+  min-height: 800px;
+  height: 100%;
   width: 100vw;
   background-color: #e7e7e7;
   display: flex;
@@ -16,7 +17,7 @@
   height: 500px;
   text-align: center;
   background-color: #fdfdfd;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .input-form {
@@ -54,3 +55,32 @@
 }
 
 /* posts#show */
+
+
+/* posts#index */
+.index-lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.index-list {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.image-num {
+  margin: 0;
+  color: black;
+  text-align: center;
+}
+
+.index-image {
+  width: 400px;
+  height: 300px;
+  margin-bottom: 50px;
+}
