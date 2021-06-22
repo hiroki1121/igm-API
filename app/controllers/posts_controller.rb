@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  protect_from_forgery except: :create
+
   def index
     @posts = Post.order('created_at ASC')
   end
@@ -18,9 +20,6 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
-  end
-
-  def delete
   end
 
   private
