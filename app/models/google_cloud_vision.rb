@@ -1,5 +1,7 @@
 class GoogleCloudVision
   attr_accessor :endpoint_uri, :file_path
+  require 'httpclient'
+  require 'base64'
 
     def initialize(file_path)
       @endpoint_uri = "https://vision.googleapis.com/v1/images:annotate?key=#{ENV['GOOGLE_APPLICATION_CREDENTIALS']}"
@@ -8,7 +10,7 @@ class GoogleCloudVision
 
     def request
       http_client = HTTPClient.new
-      content = Base64.strict.encode64(File.new(file_path, 'rb').read)
+      content = Base64.strict_encode64(File.new(file_path, 'rb').read)
       response = http_client.post_content(endpoint_uri, request_json(content), 'Content-Type' => 'application/json')
       descriptions = fetch_descriptions(response)
     end
